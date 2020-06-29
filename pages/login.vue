@@ -1,6 +1,6 @@
-<template >
+<template>
   <section>
-    <form class="form">
+    <form @submit.prevent="onSubmit" class="form">
       <div class="form-group">
         <input type="text" class="form-control" />
       </div>
@@ -13,7 +13,13 @@
 </template>
 <script>
 export default {
-  layout: "empty"
+  layout: "empty",
+  methods: {
+    onSubmit() {
+      this.$store.dispatch("login");
+      this.$router.push("/");
+    }
+  }
 };
 </script>
 <style scoped>

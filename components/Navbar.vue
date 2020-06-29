@@ -28,10 +28,23 @@
             >Login</nuxt-link
           >
         </li>
+        <li class="nav-item">
+          <a @click.prevent="logout" class="nav-link" href="#">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
 </template>
+<script>
+export default {
+  mathods: {
+    logout() {
+      this.$store.dispatch("logout")
+      this.$router.
+    }
+  }
+};
+</script>
 <style scoped>
 body {
   margin: 0;
@@ -102,5 +115,11 @@ p {
 }
 .nav-item a {
   color: #fff;
+}
+.nav-link {
+  opacity: 0.8;
+}
+.active {
+  opacity: 1;
 }
 </style>
