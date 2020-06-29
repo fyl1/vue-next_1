@@ -11,6 +11,11 @@
     </form>
   </section>
 </template>
+<script>
+export default {
+  layout: "empty"
+};
+</script>
 <style scoped>
 .form {
   display: flex;
