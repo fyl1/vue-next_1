@@ -4,16 +4,29 @@
     <div class="navbar-nav">
       <ul class="nav-list">
         <li class="nav-item">
-          <nuxt-link exact no-prefetch active-class="active" class="nav-link" to="/">Home</nuxt-link>
+          <nuxt-link
+            exact
+            no-prefetch
+            active-class="active"
+            class="nav-link"
+            to="/"
+            >Home</nuxt-link
+          >
         </li>
         <li class="nav-item">
-          <nuxt-link active-class="active" class="nav-link" to="/about">About</nuxt-link>
+          <nuxt-link active-class="active" class="nav-link" to="/about"
+            >About</nuxt-link
+          >
         </li>
         <li class="nav-item">
-          <nuxt-link active-class="active" class="nav-link" to="/users">User</nuxt-link>
+          <nuxt-link active-class="active" class="nav-link" to="/users"
+            >User</nuxt-link
+          >
         </li>
         <li class="nav-item">
-          <nuxt-link active-class="active" class="nav-link" to="/login">Login</nuxt-link>
+          <nuxt-link active-class="active" class="nav-link" to="/login"
+            >Login</nuxt-link
+          >
         </li>
       </ul>
     </div>
