@@ -1,13 +1,15 @@
 <template>
   <div>
     <Navbar />
+
     <main>
       <div class="container">
-        <Nuxt />
+        <nuxt />
       </div>
     </main>
   </div>
 </template>
+
 <script>
 import Navbar from "@/components/Navbar";
 export default {
@@ -16,5 +18,7 @@ export default {
   }
 };
 </script>
+
+
 <style>
 </style>

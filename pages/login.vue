@@ -1,16 +1,21 @@
 <template>
   <section>
-    <form @submit.prevent="onSubmit" class="form">
+    <div v-if="$route.query.message" class="alert alert-danger mb-3">Need login first</div>
+    <form @submit.prevent="onSubmit">
+      <h1>Login page</h1>
       <div class="form-group">
         <input type="text" class="form-control" />
       </div>
+
       <p>
         <nuxt-link to="/">To home page</nuxt-link>
       </p>
-      <button class="btn btn-primary" type="submit">Login page</button>
+
+      <button class="btn btn-primary" type="submit">Login</button>
     </form>
   </section>
 </template>
+
 <script>
 export default {
   layout: "empty",
@@ -22,20 +27,11 @@ export default {
   }
 };
 </script>
+
+
 <style scoped>
-.form {
-  display: flex;
-  width: 100%;
-  margin: 30px 0;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+form {
+  width: 500px;
+  margin: 0 auto;
 }
-/* .form-group {
-  width: 100%;
-}
-.form-control {
-  width: calc(100% - 40px);
-  margin: 0 20px;
-} */
 </style>

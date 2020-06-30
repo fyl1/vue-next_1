@@ -6,3 +6,8 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat velit explicabo, omnis possimus sunt saepe illum quos beatae sed aperiam aspernatur iste iusto illo, culpa, tenetur laborum at nemo deserunt!</p>
   </section>
 </template>
+<script>
+export default {
+  middlewere: ["auth"]
+};
+</script>

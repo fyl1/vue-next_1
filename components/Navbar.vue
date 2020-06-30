@@ -4,31 +4,18 @@
     <div class="navbar-nav">
       <ul class="nav-list">
         <li class="nav-item">
-          <nuxt-link
-            exact
-            no-prefetch
-            active-class="active"
-            class="nav-link"
-            to="/"
-            >Home</nuxt-link
-          >
+          <nuxt-link exact no-prefetch active-class="active" class="nav-link" to="/">Home</nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link active-class="active" class="nav-link" to="/about"
-            >About</nuxt-link
-          >
+          <nuxt-link active-class="active" class="nav-link" to="/about">About</nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link active-class="active" class="nav-link" to="/users"
-            >User</nuxt-link
-          >
+          <nuxt-link active-class="active" class="nav-link" to="/users">User</nuxt-link>
         </li>
-        <li class="nav-item">
-          <nuxt-link active-class="active" class="nav-link" to="/login"
-            >Login</nuxt-link
-          >
+        <li class="nav-item" v-if="!hasToken">
+          <nuxt-link active-class="active" class="nav-link" to="/login">Login</nuxt-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-else>
           <a @click.prevent="logout" class="nav-link" href="#">Logout</a>
         </li>
       </ul>
@@ -37,10 +24,15 @@
 </template>
 <script>
 export default {
-  mathods: {
+  computed: {
+    hasToken() {
+      return this.$store.getters.hasToken;
+    }
+  },
+  methods: {
     logout() {
-      this.$store.dispatch("logout")
-      this.$router.
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
     }
   }
 };
@@ -108,6 +100,7 @@ p {
   justify-content: space-between;
 }
 .navbar-brand {
+  padding-left: 20px;
   color: #fff;
 }
 .nav-item {
